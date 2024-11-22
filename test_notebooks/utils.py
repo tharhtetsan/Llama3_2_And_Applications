@@ -195,3 +195,21 @@ def wolfram_alpha(query: str) -> str:
 def get_boiling_point(liquid_name, celsius):
   # function body
   return []
+
+
+
+def html_tokens(tokens):
+  # simulate the color values used in https://tiktokenizer.vercel.app
+  on_colors = ["#ADE0FC", "#FCE278", "#B2D1FE", "#AFF7C6", "#FDCE9B", "#97F1FB", "#DEE1E7", "#E3C9FF", "#BBC6FD", "#D1FB8C"]
+
+  # Create an HTML string with colored spans
+  html_string = ""
+  for i, t in enumerate(tokens):
+      if t == "\n":
+            t = "\\n"
+      elif t == "\n\n":
+            t = "\\n\\n"
+      on_col = on_colors[i % len(on_colors)]
+      html_string += f'<span style="color: black; background-color: {on_col}; padding: 2px;">{t}</span>'
+
+  return html_string

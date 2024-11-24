@@ -213,3 +213,64 @@ def html_tokens(tokens):
       html_string += f'<span style="color: black; background-color: {on_col}; padding: 2px;">{t}</span>'
 
   return html_string
+
+
+
+
+def trending_songs(country_name, top_number):
+  try:
+      top_number = int(top_number)
+  except Exception:
+      country_name, top_number = top_number, int(country_name)
+     
+  songs = {
+        "US": [
+            "Blinding Lights - The Weeknd",
+            "Levitating - Dua Lipa",
+            "Peaches - Justin Bieber",
+            "Save Your Tears - The Weeknd",
+            "Good 4 U - Olivia Rodrigo",
+            "Montero (Call Me By Your Name) - Lil Nas X",
+            "Kiss Me More - Doja Cat",
+            "Stay - The Kid LAROI, Justin Bieber",
+            "Drivers License - Olivia Rodrigo",
+            "Butter - BTS"
+        ],
+        "France": [
+            "Dernière danse - Indila",
+            "Je te promets - Johnny Hallyday",
+            "La Vie en rose - Édith Piaf",
+            "Tout oublier - Angèle",
+            "Rien de tout ça - Amel Bent",
+            "J'ai demandé à la lune - Indochine",
+            "Bella - Maître Gims",
+            "À nos souvenirs - Tino Rossi",
+            "Le Sud - Nino Ferrer",
+            "La Nuit je mens - Alain Bashung"
+        ],
+        "Spain": [
+            "Despacito - Luis Fonsi",
+            "Bailando - Enrique Iglesias",
+            "Con altura - Rosalía, J.Balvin",
+            "Súbeme la Radio - Enrique Iglesias",
+            "Hawái - Maluma",
+            "RITMO (Bad Boys for Life) - Black Eyed Peas, J Balvin",
+            "Dákiti - Bad Bunny, Jhay Cortez",
+            "Vivir mi vida - Marc Anthony",
+            "Una vaina loca - Farruko, Sharlene",
+            "Te boté - Nio García, Casper Mágico, Ozuna"
+        ]
+    }
+
+  # Find the list of songs for the given country
+  if country_name in songs:
+    return songs[country_name][:top_number]
+
+  # If the country is not found, return an empty list
+  return []
+
+
+
+def get_boiling_point(liquid_name, celsius):
+  # function body
+  return []
